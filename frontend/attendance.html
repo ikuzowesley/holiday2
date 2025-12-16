@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance - KDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="topnav">
+    <div class="logo">KDA Portal</div>
+    <div class="user-info">
+      <a href="dashboard.html" style="margin-right: 16px; font-weight: 500;">&larr; Dashboard</a>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>Attendance</h2>
+
+    <div class="card">
+      <h3>Record Attendance</h3>
+      <form id="attendanceForm">
+        <div class="form-group">
+          <label for="aStudent">Select Student</label>
+          <select id="aStudent" required>
+            <option value="">Loading students...</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="adate">Date</label>
+          <input type="date" id="adate" required />
+        </div>
+        <div class="form-group">
+          <label for="astatus">Status</label>
+          <select id="astatus">
+            <option value="present">Present</option>
+            <option value="absent">Absent</option>
+            <option value="late">Late</option>
+          </select>
+        </div>
+        <button type="submit">Record</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Records History</h3>
+      <ul id="records" class="student-list"></ul>
+    </div>
+  </main>
+
+  <div id="toast-container"></div>
+  <script src="js/utils.js"></script>
+  <script src="js/attendance.js"></script>
+</body>
+
+</html>

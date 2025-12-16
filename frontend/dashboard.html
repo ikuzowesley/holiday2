@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - KDA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="topnav">
+    <div class="logo">KDA Portal</div>
+    <div class="user-info">
+      <span id="welcome">Welcome</span>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 24px;">
+      <h2>Dashboard</h2>
+      <a href="attendance.html" class="action-btn"
+        style="text-decoration:none; background:var(--primary); color:white; padding: 10px 20px; border-radius: 8px;">Take
+        Attendance &rarr;</a>
+    </div>
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3>Total Students</h3>
+        <div class="value" id="studentsCount">--</div>
+      </div>
+      <div class="stat-card">
+        <h3>Today's Attendance</h3>
+        <div class="value" id="attendanceCount">--</div>
+      </div>
+    </section>
+
+    <div class="card">
+      <h3>Add New Student</h3>
+      <form id="studentForm">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <input id="sfullName" placeholder="Full name (e.g. Jane Doe)" required />
+          <input id="sclassLevel" placeholder="Class level (e.g. Grade 1)" required />
+          <input id="sparentPhone" placeholder="Parent phone" />
+          <input id="sregNo" placeholder="Reg No (e.g. S001)" />
+        </div>
+        <button type="submit" style="width: auto; padding: 12px 24px;">Add Student</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h3>Enrolled Students</h3>
+      <ul id="studentsList" class="student-list"></ul>
+    </div>
+  </main>
+
+  <div id="toast-container"></div>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>
